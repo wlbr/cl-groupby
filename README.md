@@ -9,9 +9,8 @@ License
 -------
 MIT License. See included LICENSE file.
 
-Usage
------
-###Motivation
+Motivation
+----------
 Let's think of the task "find the first unique character" in a given string.
 
      (defparameter str "lisp rulez")
