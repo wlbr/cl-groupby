@@ -85,7 +85,7 @@ You may get the code with:
     git clone git://github.com/wlbr/cl-groubpy.git
 
 Either you add this to your asdf repository, then you will only need
-to do a `(require :groupy)` in your source.
+to do a `(require :groupby)` in your source.
 
 Or, you may put the source in a subdirectory of your project and add
 the file `groupby.asd` wih its full path to your own asdf definition.
