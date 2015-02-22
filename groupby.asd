@@ -13,6 +13,7 @@
   :description "groupby: A higher order function named groupby as known from Scala."
   :author "Michael Wolber <mwolber@gmx.de>"
   :version "1.0.0"
+  :licence "MIT"
   :serial t
   :components ((:file "package")
                (:file "groupby")))
