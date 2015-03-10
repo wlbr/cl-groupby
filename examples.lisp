@@ -24,8 +24,8 @@
 ;---Examples
 ;----------------------------------
 
-; fid the first uniq char in string
-(defparameter str "lisp rulez")
+; find the first uniq char in string
+(defparameter *str* "lisp rulez")
 
 ; nice Lisp solution
 (defun first-uniq-char1 (str)
@@ -53,21 +53,21 @@
           (setq c NIL)))))
 
 
-(first-uniq-char1 str)
-(first-uniq-char2 str)
+(first-uniq-char1 *str*)
+(first-uniq-char2 *str*)
 
 ;a looong string
-(defparameter strlong (coerce  (loop for i to 100000 collect (code-char (+ (char-code #\a) (random 25)))) 'string) )
-(setf (elt strlong (truncate (length strlong) 2)) #\z)
+(defparameter *strlong* (coerce  (loop for i to 100000 collect (code-char (+ (char-code #\a) (random 25)))) 'string) )
+(setf (elt *strlong* (truncate (length *strlong*) 2)) #\z)
 
-(time (first-uniq-char1 strlong))   ; takes some minutes to run (2 on my laptop)
-(time (first-uniq-char2 strlong))
+(time (first-uniq-char1 *strlong*))   ; takes some minutes to run (2 on my laptop)
+(time (first-uniq-char2 *strlong*))
 
 
 ; a groupby solution
 (time (remove-if #'(lambda (x) (> (second x) 1)) 
                  (mapcar #'(lambda (x) (list (first x) (length (second x)))) 
-                         (gb:groupby #'(lambda (x) x) strlong))))
+                         (gb:groupby #'(lambda (x) x) *strlong*))))
 
 
 ;----------------------------------
