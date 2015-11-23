@@ -69,9 +69,6 @@ use of this feature to proper solve problems.
 Installation
 ------------
 
-Maybe we will get this into Quicklisp? Until then:
-<!-- Waiting for Quicklisp incude ;-)
-
 The most simple and recommended way to install cl-grouby is by using
 [Quicklisp](http://www.quicklisp.org). If you installed Quicklisp a simple
 
@@ -83,7 +80,6 @@ this once per machine. Later a
     (require :groupby)
 
 will be enough.
--->
 
 
 You may get the code with:
