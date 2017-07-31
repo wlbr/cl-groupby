@@ -19,7 +19,7 @@ The naive approach in Lisp is as simple as elegant:
     (char (remove-if #'(lambda (x) (> (count x *str*) 1)) *str*) 0)
 
 For simplicity let's ignore the point that it will throw an error when there is no uniqe char in str. 
-_Unfortunately the performance of the function is quite bad, quadratic runtime._
+_Unfortunately the performance of the function is quite bad, it has quadratic runtime._
 
 A quicker solution would look like the following lines. While this _is_ fast, it is not as intuitive as the first solution.
 
@@ -36,7 +36,7 @@ A quicker solution would look like the following lines. While this _is_ fast, it
             ((<= size i) 
              c))))
 
-Compare both funnctions with a long string:
+Compare both functions with a long string:
 
     (defparameter *strlong* 
       (coerce (loop for i to 10000
@@ -49,7 +49,7 @@ Compare both funnctions with a long string:
 
 A factor of something around than 600 on my machine.
 
-Now we make use of our new groubby function:
+Now we make use of our new groupby function:
 
     (time (remove-if #'(lambda (x) (> (second x) 1)) 
              (mapcar #'(lambda (x) (list (first x) (length (second x)))) 
@@ -69,10 +69,10 @@ use of this feature to proper solve problems.
 Installation
 ------------
 
-The most simple and recommended way to install cl-grouby is by using
+The most simple and recommended way to install cl-groupby is by using
 [Quicklisp](http://www.quicklisp.org). If you installed Quicklisp a simple
 
-    (ql:quickload :groubpy)
+    (ql:quickload :groupby)
 
 will download the package and acually load it. You only need to do
 this once per machine. Later a
@@ -84,7 +84,7 @@ will be enough.
 
 You may get the code with:
 
-    git clone git://github.com/wlbr/cl-groubpy.git
+    git clone git://github.com/wlbr/cl-groupby.git
 
 Either you add this to your asdf repository, then you will only need
 to do a `(require :groupby)` in your source.
